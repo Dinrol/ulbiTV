@@ -1,13 +1,13 @@
-import { Suspense, lazy, useContext } from "react"
+import { Suspense, lazy } from "react"
 
 import { Link, Route, Routes } from "react-router-dom"
 
 import './styles/index.scss'
-import { useThemeStore } from "./theme/ThemeStore"
-import { classNames } from "./helpers/classNames"
 
-const AboutPage = lazy(() => import('./pages/AboutPage'))
-const MainPage = lazy(() => import('./pages/MainPage'))
+import { classNames } from "shared/lib/classNames"
+import { useThemeStore } from "app/providers/ThemeProvider"
+import { AboutPage } from "pages/AboutPage"
+import { MainPage } from "pages/MainPage"
 
 export const App = () => {
   const { theme, toggleTheme } = useThemeStore()

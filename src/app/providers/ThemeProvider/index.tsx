@@ -1,9 +1,10 @@
 import { FC, createContext, useContext } from "react";
-import { useTheme } from "./useTheme";
+
+import { useTheme } from "./hooks";
 
 type Theme = ReturnType<typeof useTheme>
 
-export const ThemeContext = createContext({} as Theme)
+const ThemeContext = createContext({} as Theme)
 
 export const ThemeProvider: FC = ({ children }) => {
   const theme = useTheme()
