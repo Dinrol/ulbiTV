@@ -17,3 +17,4 @@ export const ThemeProvider: FC = ({ children }) => {
 }
 
 export const useThemeStore = () => useContext(ThemeContext)
+export { Theme } from './hooks'

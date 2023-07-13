@@ -7,11 +7,10 @@ import { AppRouter } from "app/providers/router"
 import { Navbar } from "widgets/Navbar"
 
 export const App = () => {
-  const { theme, toggleTheme } = useThemeStore()
+  const { theme } = useThemeStore()
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <button onClick={toggleTheme}>Toggle theme</button>
       <Navbar />
       <AppRouter />
     </div>
