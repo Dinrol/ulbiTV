@@ -4,10 +4,5 @@
     "src/shared/config/routeConfig/i18n"
   ],
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.extract.ignoredByFiles": {
-    "src/widgets/LangSwitcher/ui/LangSwitcher.tsx": [
-      "Машина"
-    ]
-  },
   "i18n-ally.sourceLanguage": "ru"
 }
