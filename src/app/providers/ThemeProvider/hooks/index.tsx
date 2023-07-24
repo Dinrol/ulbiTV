@@ -1,25 +1,25 @@
-import { useState } from "react"
+import { useState } from 'react';
 
 export enum Theme {
   DARK = 'dark',
   NORMAL = 'normal',
 }
 
-const LS_THEME_KEY = 'theme'
+const LS_THEME_KEY = 'theme';
 
-const defaultTheme = localStorage.getItem(LS_THEME_KEY) as Theme || Theme.NORMAL
+const defaultTheme = localStorage.getItem(LS_THEME_KEY) as Theme || Theme.NORMAL;
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState(defaultTheme)
-  
+  const [theme, setTheme] = useState(defaultTheme);
+
   const toggleTheme = () => {
-    const newTheme = theme === Theme.DARK ? Theme.NORMAL : Theme.DARK
-    setTheme(newTheme)
-    localStorage.setItem(LS_THEME_KEY, newTheme)
-  }
+    const newTheme = theme === Theme.DARK ? Theme.NORMAL : Theme.DARK;
+    setTheme(newTheme);
+    localStorage.setItem(LS_THEME_KEY, newTheme);
+  };
 
   return {
     theme,
-    toggleTheme
-  }
-}
+    toggleTheme,
+  };
+};
