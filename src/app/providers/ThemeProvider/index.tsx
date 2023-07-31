@@ -2,7 +2,7 @@ import { FC, createContext, useContext } from 'react';
 
 import { useTheme } from './hooks';
 
-type Theme = ReturnType<typeof useTheme>
+type Theme = ReturnType<typeof useTheme>;
 
 const ThemeContext = createContext({} as Theme);
 

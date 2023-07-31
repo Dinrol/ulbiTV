@@ -54,6 +54,22 @@ module.exports = {
     ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
+    semi: 0,
+    '@typescript-eslint/semi': 'error',
+    'no-unexpected-multiline': 'error',
+    '@typescript-eslint/member-delimiter-style': [
+      'error',
+      {
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,
