@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames';
@@ -28,12 +29,12 @@ export const Sidebar = (props: SidebarProps) => {
         [className],
       )}
     >
-      <Button
+      {/* <Button
         data-testid="sidebar-toggle"
         onClick={onToogle}
       >
         toggle
-      </Button>
+      </Button> */}
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />
