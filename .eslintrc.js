@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:i18next/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,19 +19,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
-    'react/jsx-filename-extension': [
-      2,
-      { extensions: ['.js', '.jsx', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['.js', '.jsx', '.tsx'],
+    }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
@@ -41,48 +37,37 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'i18next/no-literal-string': [
-      2,
-      {
-        markupOnly: true,
-        ignoreAttribute: ['data-testid'],
-      },
-    ],
-    'max-len': [
-      2,
-      {
-        ignoreComments: true,
-        code: 100,
-      },
-    ],
+    'i18next/no-literal-string': [2, {
+      markupOnly: true,
+      ignoreAttribute: ['data-testid', 'to'],
+    }],
+    'max-len': [2, {
+      ignoreComments: true,
+      code: 100,
+    }],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn'],
     semi: 0,
     '@typescript-eslint/semi': 'error',
     'no-unexpected-multiline': 'error',
-    '@typescript-eslint/member-delimiter-style': [
-      'error',
-      {
-        multiline: {
-          delimiter: 'semi',
-          requireLast: true,
-        },
-        singleline: {
-          delimiter: 'semi',
-          requireLast: true,
-        },
+    '@typescript-eslint/member-delimiter-style': ['error', {
+      multiline: {
+        delimiter: 'semi',
+        requireLast: true,
       },
-    ],
+      singleline: {
+        delimiter: 'semi',
+        requireLast: true,
+      },
+    }],
   },
   globals: {
     __IS_DEV__: true,
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off',
-      },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
     },
-  ],
+  }],
 };
