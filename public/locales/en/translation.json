@@ -6,5 +6,6 @@
   "throw-error": "throw Error",
   "glavnaya": "Main",
   "o-saite": "About",
-  "pereklyuchit": "Toggle"
+  "pereklyuchit": "Toggle",
+  "korotkii-yazyk": "EN"
 }
