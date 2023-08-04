@@ -9,8 +9,8 @@ const LS_THEME_KEY = 'theme';
 
 const defaultTheme = localStorage.getItem(LS_THEME_KEY) as Theme || Theme.NORMAL;
 
-export const useTheme = () => {
-  const [theme, setTheme] = useState(defaultTheme);
+export const useTheme = (initialTheme?: Theme) => {
+  const [theme, setTheme] = useState(initialTheme || defaultTheme);
 
   const toggleTheme = () => {
     const newTheme = theme === Theme.DARK ? Theme.NORMAL : Theme.DARK;

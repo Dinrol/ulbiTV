@@ -1,4 +1,4 @@
-import './styles/index.scss';
+/* eslint-disable i18next/no-literal-string */
 
 import { classNames } from 'shared/lib/classNames';
 import { useThemeStore } from 'app/providers/ThemeProvider';
