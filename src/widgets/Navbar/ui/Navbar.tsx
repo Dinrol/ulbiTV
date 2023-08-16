@@ -1,11 +1,9 @@
-/* eslint-disable i18next/no-literal-string */
-/* eslint-disable max-len */
 import { FC, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 
-import { Modal } from 'shared/ui/Modal';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -16,8 +14,12 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   const { t } = useTranslation();
   const [isAuthModalShown, setIsAuthModalShown] = useState(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModalShown((prev) => !prev);
+  const onCloseModal = useCallback(() => {
+    setIsAuthModalShown(false);
+  }, []);
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModalShown(true);
   }, []);
 
   return (
@@ -25,13 +27,14 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
         className={cls.links}
-        onClick={onToggleModal}
+        onClick={onShowModal}
       >
         {t('voiti')}
       </Button>
-      <Modal onClose={onToggleModal} isOpen={isAuthModalShown}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rerum alias suscipit fugiat inventore labore, odit eligendi iusto rem saepe pariatur debitis reiciendis, vitae voluptas molestiae. Ut labore veritatis repudiandae!
-      </Modal>
+      <LoginModal
+        isOpen={isAuthModalShown}
+        onClose={onCloseModal}
+      />
     </div>
   );
 };

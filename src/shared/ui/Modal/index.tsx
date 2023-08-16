@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal';
-import { useThemeStore } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -15,6 +14,7 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
@@ -23,11 +23,12 @@ export const Modal = (props: ModalProps) => {
     children,
     isOpen,
     onClose,
+    lazy,
   } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useThemeStore();
 
   const mods = {
     [cls.opened]: isOpen,
@@ -52,6 +53,12 @@ export const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
       window.addEventListener('keydown', onKeyDown);
     }
 
@@ -64,6 +71,10 @@ export const Modal = (props: ModalProps) => {
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

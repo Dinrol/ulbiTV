@@ -22,5 +22,5 @@
   "include": [
     "./config/jest/setupTests.ts",
     "src"
-  ],
+, "src/features/AuthByUsername/ui/LoginForm/.tsx"  ],
 }
