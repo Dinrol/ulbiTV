@@ -30,6 +30,7 @@ export const Button: FC<ButtonProps> = (props) => {
     theme,
     square,
     size = ButtonSize.M,
+    disabled,
     ...otherProps
   } = props;
 
@@ -37,11 +38,13 @@ export const Button: FC<ButtonProps> = (props) => {
     [cls[theme]]: true,
     [cls.square]: square,
     [cls[size]]: true,
+    [cls.disabled]: disabled,
   };
 
   return (
     <button
       type="button"
+      disabled={disabled}
       className={classNames(cls.button, mods, [className])}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}

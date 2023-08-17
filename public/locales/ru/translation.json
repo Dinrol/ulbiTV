@@ -10,5 +10,7 @@
   "korotkii-yazyk": "RU",
   "voiti": "Войти",
   "vvedite-username": "Введите username",
-  "vvedite-password": "Введите password"
+  "vvedite-password": "Введите password",
+  "forma-avtorizacii": "Форма авторизации",
+  "vyiti": "Выйти"
 }

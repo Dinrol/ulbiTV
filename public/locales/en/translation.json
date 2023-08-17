@@ -10,5 +10,7 @@
   "korotkii-yazyk": "EN",
   "voiti": "Sign in",
   "vvedite-username": "Enter username",
-  "vvedite-password": "Enter password"
+  "vvedite-password": "Enter password",
+  "forma-avtorizacii": "Authorization form",
+  "vyiti": "Logout"
 }
