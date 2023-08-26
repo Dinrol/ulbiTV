@@ -1,9 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DeepPartial } from '@reduxjs/toolkit';
+import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 
-export const StoreDecorator = (initialState: DeepPartial<StateSchema>) => (Story: () => any) => (
-  <StoreProvider initialState={initialState}>
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+  loginForm: loginReducer,
+};
+
+export const StoreDecorator = (
+  initialState: DeepPartial<StateSchema>,
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>,
+) => (Story: () => any) => (
+  <StoreProvider
+    asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+    initialState={initialState}
+  >
     {Story()}
   </StoreProvider>
 );

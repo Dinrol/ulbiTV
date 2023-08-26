@@ -44,7 +44,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': [2, {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to'],
+      ignoreAttribute: ['data-testid', 'to', 'name'],
     }],
     'max-len': [2, {
       ignoreComments: true,
@@ -71,6 +71,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
   globals: {
     __IS_DEV__: true,
