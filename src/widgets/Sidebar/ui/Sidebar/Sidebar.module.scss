@@ -29,23 +29,6 @@
   }
 }
 
-.item {
-  display: flex;
-  align-items: center;
-
-  & > :not(:last-child) {
-    margin-right: 10px;
-  }
-
-  .icon {
-    fill: var(--inverted-primary-color);
-  }
-
-  .link {
-    opacity: 1;
-  }
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
@@ -56,12 +39,6 @@
 
   .lang {
     margin-left: 0;
-  }
-
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
   }
 }
 

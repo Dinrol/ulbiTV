@@ -12,5 +12,6 @@
   "vvedite-username": "Enter username",
   "vvedite-password": "Enter password",
   "forma-avtorizacii": "Authorization form",
-  "vyiti": "Logout"
+  "vyiti": "Logout",
+  "profil": "Profile"
 }

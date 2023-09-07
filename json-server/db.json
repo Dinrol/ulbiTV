@@ -1,11 +1,14 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" },
+  "profile": { 
+    "firstname": "Roman",
+    "lastname": "Rakov",
+    "age": "28",
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Kazan",
+    "username": "admin",
+    "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295806139337963.png"
+  },
   "users": [
     {
       "id": "1",

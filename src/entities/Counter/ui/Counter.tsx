@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable i18next/no-literal-string */
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Button } from 'shared/ui/Button';
+import { useAppDsipatch } from 'shared/lib/hooks/useAppDispatch';
 import { getCounterValue } from '../model/selectors/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
@@ -12,7 +13,7 @@ interface CounterProps {
 export const Counter = (props: CounterProps) => {
   const { className } = props;
   const counterValue = useSelector(getCounterValue);
-  const dispatch = useDispatch();
+  const dispatch = useAppDsipatch();
 
   const onIncrement = () => {
     dispatch(counterActions.increment());
